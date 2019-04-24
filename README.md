@@ -9,3 +9,7 @@ You may run the initk8s.sh script to provision the app:
  - which creates secrets
  - deploys postgres app with emptydir persistent volume
  - deploys the helloworld app for api calls
+ 
+ Get the Users Information:
+ 
+ curl http://$(kubectl get svc | grep helloworld |awk '{print $4}')/user
